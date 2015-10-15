@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name		Hide Twitter Trends and Promoted Tweets
-// @description	See: title.  Yup
+// @name		Hide Twitter Trends and Promoted Tweets (And Also The Moments Tab)
+// @description	See: title.
 // @include     htt*://twitter.com*
 // @include     htt*://*.twitter.com*
 // @grant		none
