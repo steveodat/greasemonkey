@@ -16,7 +16,13 @@ function addGlobalStyle(css) {
     head.appendChild(style);
 }
 
+// hides a mess of superfluous stuff I don't use.  
+// honestly not sure if all these classes/ids are still used, as I add to the list as facebook adds new things I dislike
 addGlobalStyle('#pagelet_ego_pane, #pagelet_ego_pane_w, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #developerNav {display: none!important;}');
+
+// this hides, and then adds a show/hide link to the trending topics
+// because I don't want to see that garbage
+// (but sometimes I do)
 
 addGlobalStyle('.showdy {display: block!important;}');
 addGlobalStyle('.noshowdy {display: none!important;}');
