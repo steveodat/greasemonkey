@@ -1,39 +1,37 @@
 // ==UserScript==
 // @name		Make Facebook Suck Less: The SteveODat Method
-// @description	See: title.  Hides annoying things, adds the toggle option to re-show trending things
+// @description	See: title.
 // @include     htt*://facebook.com*
 // @include     htt*://*.facebook.com*
 // @grant		none
 // ==/UserScript==
 
+var head, style;
+head = document.getElementsByTagName('head')[0];
+style = document.createElement('style');
+style.type = 'text/css';
+
 function addGlobalStyle(css) {
-    var head, style;
-    head = document.getElementsByTagName('head')[0];
-    if (!head) { return; }
-    style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = css;
-    head.appendChild(style);
+    style.innerHTML = style.innerHTML + css;
 }
 
-// hides a mess of superfluous stuff I don't use.  
-// honestly not sure if all these classes/ids are still used, as I add to the list as facebook adds new things I dislike
-addGlobalStyle('#pagelet_ego_pane, #pagelet_ego_pane_w, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #developerNav {display: none!important;}');
+document.addEventListener("DOMContentLoaded", function() {
 
-// this hides, and then adds a show/hide link to the trending topics
-// because I don't want to see that garbage
-// (but sometimes I do)
+    addGlobalStyle('#pagelet_ego_pane, #pagelet_ego_pane_w, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #pagelet_sidebar, #pagelet_rhc_footer, #developerNav, .noshowdy {display: none!important;}');
 
-addGlobalStyle('.showdy {display: block!important;}');
-addGlobalStyle('.noshowdy {display: none!important;}');
-addGlobalStyle('.tar {text-align: right;}');
+    addGlobalStyle('.showdy {display: block!important;}');
+    addGlobalStyle('.tar {text-align: right;}');
+    addGlobalStyle('.home_right_column {min-height: 0!important;}');
 
-document.getElementById("pagelet_trending_tags_and_topics").className = 'pagelet noshowdy';
+    document.getElementById("pagelet_trending_tags_and_topics").className = 'pagelet noshowdy';
 
-var wra = document.getElementsByClassName("rightColumnWrapper");
+    var wra = document.getElementsByClassName("home_right_column");
 
-var newnode = document.createElement("div");
-newnode.innerHTML = '<a href="#" onclick="var tt = document.getElementById(\'pagelet_trending_tags_and_topics\'); if (tt.className == \'pagelet showdy\') {tt.className = \'pagelet noshowdy\';} else {tt.className = \'pagelet showdy\';}">show/hide</a>';
-newnode.className = 'tar';
+    var newnode = document.createElement("div");
+    newnode.innerHTML = '<a href="#" onclick="var tt = document.getElementById(\'pagelet_trending_tags_and_topics\'); if (tt.className == \'pagelet showdy\') {tt.className = \'pagelet noshowdy\';} else {tt.className = \'pagelet showdy\';}">show/hide</a>';
+    newnode.className = 'tar';
 
-wra[0].appendChild(newnode);
+    wra[0].appendChild(newnode);
+});
+
+head.appendChild(style);
