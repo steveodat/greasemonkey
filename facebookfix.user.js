@@ -18,7 +18,6 @@ function addGlobalStyle(css) {
 document.addEventListener("DOMContentLoaded", function() {
 
     addGlobalStyle('#pagelet_ego_pane, #pagelet_ego_pane_w, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #pagelet_sidebar, #pagelet_rhc_footer, #developerNav, .noshowdy {display: none!important;}');
-
     addGlobalStyle('.showdy {display: block!important;}');
     addGlobalStyle('.tar {text-align: right;}');
     addGlobalStyle('.home_right_column {min-height: 0!important;}');
