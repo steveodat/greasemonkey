@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     addGlobalStyle('.showdy {display: block!important;}');
     addGlobalStyle('.tar {text-align: right;}');
     addGlobalStyle('.home_right_column {min-height: 0!important;}');
-    addGlobalStyle('#u_0_q {position: static!important;}');
+    addGlobalStyle('#u_0_p {position: static!important;}');
 
     head.appendChild(style);
     
