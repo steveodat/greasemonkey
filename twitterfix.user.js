@@ -40,7 +40,7 @@ maindoc.addEventListener("DOMContentLoaded", function() {
 	// get the newly create node for use later on
 	var toglink = maindoc.getElementById('toglink');
 
-	// get classlist fot t timeline div
+	// get classlist for the timeline div
 	var tlcl = maindoc.getElementById("timeline").classList;
 
 	// add or remove the class newstream to the timeline div to hide or show favs, and change the trigger innerHTML accordingly
