@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name		Hide Annoying Twitter Things
 // @description	Hides Trends, Promoted Tweets, Moments Tab, that While You Were Away Nonsense. Now also restores non-Segoe UI font.
-// @include     htt*://twitter.com*
-// @include     htt*://*.twitter.com*
+// @include     htt*:/*twitter.com*
 // @grant		none
 // ==/UserScript==
 
@@ -19,7 +18,8 @@ function addStyle(css) {
 	style.innerHTML = style.innerHTML + css;
 }
 
-maindoc.addEventListener("DOMContentLoaded", function() {
+if (maindoc.readyState === "complete" || maindoc.readyState === "interactive") {
+  
 	// hide things we do not want to see
 	addStyle('.trends, .promoted-tweet, .moments, .has-recap, .LiveVideoHomePageModuleContainer, .newstream li[data-suggestion-json*="ActivityTweet"] {display:none!important;}');
 
@@ -40,7 +40,7 @@ maindoc.addEventListener("DOMContentLoaded", function() {
 	// get the newly create node for use later on
 	var toglink = maindoc.getElementById('toglink');
 
-	// get classlist for the timeline div
+	// get classlist fot t timeline div
 	var tlcl = maindoc.getElementById("timeline").classList;
 
 	// add or remove the class newstream to the timeline div to hide or show favs, and change the trigger innerHTML accordingly
