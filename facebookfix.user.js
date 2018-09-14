@@ -15,23 +15,8 @@ function addGlobalStyle(css) {
 }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
-  
-    addGlobalStyle('#pagelet_ego_pane, #pagelet_ego_pane_w, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #pagelet_sidebar, #pagelet_dock, #pagelet_rhc_footer, #developerNav, .noshowdy, ._3lb4:not([data-timestamp]) div {display: none!important;}');
-    addGlobalStyle('.showdy {display: block!important;}');
-    addGlobalStyle('.tar {text-align: right;}');
-    addGlobalStyle('.home_right_column {min-height: 0!important;}');
-    addGlobalStyle('#u_0_p {position: static!important;}');
-	
+    addGlobalStyle('#pagelet_ego_pane, #pagelet_marketplace_new_user_top_picks_rhc, .mvm, #pagelet_ego_pane_w, #pagelet_video_home_suggested_for_you_rhc, #pagelet_ego_contextual_group, #stories_pagelet_rhc, #pagelet_side_ads, #fbDockChatBuddylistNub, #pagelet_friends_online, #listsNav, #interestsNav, #appsNav, #pagesNav, #left_nav_section_nodes, #pinnedNav, #leftCol, #pagelet_sidebar, #pagelet_dock, #pagelet_rhc_footer, #developerNav, .fbChatSidebar, .noshowdy, ._3lb4:not([data-timestamp]) div {display: none!important;}');
+    addGlobalStyle('#u_0_p, .fixed_elem {position: static!important;}');
+    addGlobalStyle('#contentArea, #rightCol {clear: left!important;float: none!important;position: static!important; margin: 0px auto!important;text-align: left;} ._2yq #globalContainer {width:100%!important;} #contentCol {text-align: center!important; width: 100%!important;margin:0px!important;} #content_container {margin: 0px auto!important;}');
     head.appendChild(style);
-
-    /* make sure this bit exists before doing stuff to it, otherwise it can sometimes bork up the rest of the script */
-    if (document.getElementById("pagelet_trending_tags_and_topics") !== null) {
-       document.getElementById("pagelet_trending_tags_and_topics").className = 'pagelet noshowdy';
-       var wra = document.getElementsByClassName("home_right_column");
-       var newnode = document.createElement("div");
-       newnode.innerHTML = '<a href="#" onclick="var tt = document.getElementById(\'pagelet_trending_tags_and_topics\'); if (tt.className == \'pagelet showdy\') {tt.className = \'pagelet noshowdy\';} else {tt.className = \'pagelet showdy\';}" style="display: block; margin: 1em;">show/hide trending</a>';
-       newnode.className = 'tar';
-       wra[0].appendChild(newnode);
-    }
-
 }
