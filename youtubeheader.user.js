@@ -23,5 +23,5 @@ if (document.readyState === "complete" || document.readyState === "interactive")
 // this bit scrolls the page down the top(ish) of the video container in firefox
 // mostly useful when going from video to video
 window.setTimeout(function() {
-  window.scrollTo(0,75);
+  window.scrollTo(0,62);
 },2500);
