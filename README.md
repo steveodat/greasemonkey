@@ -3,7 +3,7 @@ Some greasemonkey scripts I use to make some sites less annoying (facebook, twit
 
 <h3>Facebook</h3>
 
-Hides all the garbage.  Hides the trending topics box as well, but adds in a toggle if you just can't help yourself.
+Hides all the garbage.  Updated: hides left and right columns, only shows middle, centered, and the upcoming events bit. Streamlined for occasional use.
 
 <h3>Twitter</h3>
 
